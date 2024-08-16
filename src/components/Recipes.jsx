@@ -6,15 +6,19 @@ import "../components/Recipes.css"
  const Recipes = () => {
   const recipes = useFetch("/recipes");
  return (
-   <div className="Menu grid grid-cols-2   gap-x-1 text-neutral-50 ">
-   <h1 className="text-center ">Menu</h1>
+   <div className="Menu  ">
+   <h1 className="text-center text-neutral-50  underline text-2xl font-bold">Menu</h1>
+ 
     { recipes.map((recipe) => (
-    <div key={recipe.id}>
-      <div className="List text-neutral-50  " >
+        <div className=" flex justify-center ">
+     <div key={recipe.id}>
+      <div className="List text-neutral-50 text-center list-disc " >
       <Link to={`/singel/${recipe.id}`}><h3 className=" ">{recipe.name}</h3></Link> 
       </div>
    
     </div>
+        </div>
+   
     ))
   }
 </div>
